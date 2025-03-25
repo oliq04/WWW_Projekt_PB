@@ -26,6 +26,12 @@ nav
     background-color: aliceblue;
 
 }
+.navLi {
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 2px solid green;
+}
 
 nav ul
 {
