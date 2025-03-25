@@ -1,9 +1,13 @@
 
-body {
-    margin: 0px;
+html,body {
     font-family: Arial;
     font-size: 12px;
     background: linear-gradient(to bottom, #a1866f, #f5e3c8);
+    html, body
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
 }
 
 header
