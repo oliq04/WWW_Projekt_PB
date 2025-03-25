@@ -21,10 +21,19 @@ header
     margin: 0px auto;
     background-color: #a4753b;
 }
-nav
-{
-    background-color: aliceblue;
-
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: -180px; 
+    width: 180px;
+    height: 100vh;
+    background-color: #f0f0f0;
+    transition: left 0.3s ease;
+    padding: 20px;
+    z-index: 1000;
+}
+.side-nav:hover {
+        left: 0;
 }
 .navLi {
     border: 1px solid black;
@@ -39,6 +48,10 @@ nav ul
     list-style: none;
     color:black;
     
+}
+
+#searchbar {
+    text-align: center;
 }
 
 a:link
