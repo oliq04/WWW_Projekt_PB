@@ -1,0 +1,13 @@
+h1 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 72px;
+    color: lime;
+    background: repeating-linear-gradient(45deg, pink, yellow 10px, cyan 20px);
+    text-shadow: 2px 2px 4px red, -2px -2px 4px blue;
+    transform: rotate(-5deg) skewX(10deg);
+    border: 5px dashed magenta;
+    padding: 20px;
+    animation: shake 0.3s infinite alternate;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
