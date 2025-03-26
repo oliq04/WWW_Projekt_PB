@@ -1,0 +1,36 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    padding:10rem;
+}
+
+#log
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login, #haslo
+{
+    height: 3rem;
+    margin:1.5rem;
+    width: 35rem;
+    border-radius: 15px;
+    border-color: black;
+    padding:0.5rem;
+
+}
+
+#zaloguj
+{
+    height: 2.5rem;
+    width: 8rem;
+    border-radius: 10px;
+    border-color: transparent;
+    margin:1rem;
+    background-color: #3498db;
+    color:white;
+}
+
