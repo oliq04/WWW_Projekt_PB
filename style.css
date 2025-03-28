@@ -172,3 +172,32 @@ footer
     align-items: center;
    
 }
+
+#ramka-dla-obiektu
+{
+    width:150px;
+    height:200px;
+    margin: 30px;
+    display:flex;
+    flex-direction: column; 
+    justify-items: center;
+    padding:10px;
+    text-align: center;
+}
+
+#ramka-dla-obiektu:hover
+{
+    background-color: #f0f0f0;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+#obiekt
+{
+    width:100px;
+    height: 150px;
+    padding:1.5rem;
+    justify-content: center;
+
+}
