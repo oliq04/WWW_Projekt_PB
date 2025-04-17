@@ -12,7 +12,7 @@ function changeImage() {
 }
 
 changeImage(); // Załaduj pierwsze zdjęcie
-setInterval(changeImage, 15000); // Zmieniaj co 15 sekundy
+setInterval(changeImage, 5000); // Zmieniaj co 15 sekundy
 
 
 function zegar(){
