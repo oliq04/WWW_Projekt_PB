@@ -1,3 +1,11 @@
+body
+{
+    padding-left:8rem;
+    padding-right: 8rem;
+    font-family: "Inter", sans-serif;
+}
+
+
 #hed 
 {
    
@@ -36,4 +44,51 @@ a{
     background-color: black;
     height: 4rem;
     border: 0px solid black;
+}
+
+#glowny-content
+{
+    color:black;
+    padding-top:5rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+
+.hooovery
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+#share, #inspiration, #disscus
+{
+    border:2px solid black;
+    border-radius: 20px;
+    height:300px;
+    width:300px;
+    padding:5px;
+    margin:20px
+   
+}
+
+#share:hover, #inspiration:hover, #disscus:hover
+{
+    box-shadow:-10px 10px 2px rgb(210,210,210);
+    transform: scale(1.10);
+    transition: all 0.3s ease-in-out;  
+}
+
+#iconopinia
+{
+
+    width:100px;
+    height:100px;
 }
