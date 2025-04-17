@@ -70,12 +70,17 @@ a{
 
 #share, #inspiration, #disscus
 {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
     border:2px solid black;
     border-radius: 20px;
     height:300px;
     width:300px;
     padding:5px;
-    margin:20px
+    margin:30px
+    
    
 }
 
@@ -86,9 +91,12 @@ a{
     transition: all 0.3s ease-in-out;  
 }
 
-#iconopinia
+#iconopinia, #iconinspiracja , #icondyskusja
 {
 
     width:100px;
     height:100px;
+    
+    border-radius: 20px;
+    margin: 4px
 }
