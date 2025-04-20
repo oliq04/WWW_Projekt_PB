@@ -27,3 +27,10 @@ function zegar(){
         setTimeout("zegar()", 1000);
 }
 zegar(); // Wywołaj funkcję zegar() przy załadowaniu strony
+
+
+
+function darkMode()
+{
+    
+}
