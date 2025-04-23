@@ -32,5 +32,5 @@ zegar(); // Wywołaj funkcję zegar() przy załadowaniu strony
 
 function darkMode()
 {
-    
+    document.documentElement.classList.toggle("darkmode");
 }

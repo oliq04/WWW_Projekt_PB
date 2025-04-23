@@ -108,14 +108,14 @@ a{
     
 }
 
-#darkmode
+#darkmod2
 {
     background-color: transparent;
     border: 0 solid black;
     border-radius: 30px;
 }
 
-#darkmode:hover
+#darkmod2:hover
 {
     background-color: transparent;
     border: 0 solid black;
@@ -123,3 +123,39 @@ a{
     transform: scale(1.10);
     transition: all 0.3s ease-in-out;  
 }
+
+.darkmode body {
+    background-color: black;
+    color: white;
+}
+
+.darkmode #hed {
+    background-color: black;
+    color: white;
+}
+
+.darkmode #borderbuton {
+    background-color: white;
+    color: black;
+}
+
+.darkmode #logbut {
+    color: black;
+}
+
+.darkmode .navt, 
+.darkmode a {
+    color: white;
+}
+
+.darkmode h2 {
+    color: white;
+}
+
+.darkmode #inspiration,
+.darkmode #share,
+.darkmode #disscus 
+{
+    border:2px solid white;
+}
+
