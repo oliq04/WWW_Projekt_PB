@@ -91,38 +91,96 @@ nav {
         transition: all 0.3s ease-in-out;
     }
 
-#glowny-content {
+#glowny-content
+{
+    color:black;
+    padding-top:5rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+
+.hooovery
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+#share, #inspiration, #disscus
+{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    border:2px solid black;
     border-radius: 20px;
-    border: 2px solid black;
-    padding: 5px;
-    transition: all 0.4s;
+    height:300px;
+    width:300px;
+    padding:5px;
+    margin:30px
+    
+   
 }
-#glowny-content:hover {
+
+#share:hover, #inspiration:hover, #disscus:hover
+{
+    box-shadow:-10px 10px 2px rgb(210,210,210);
+    transform: scale(1.10);
+    transition: all 0.3s ease-in-out;  
+}
+
+#iconopinia, #iconinspiracja , #icondyskusja
+{
+
+    width:100px;
+    height:100px;
+    
     border-radius: 20px;
-    border: 2px solid black;
-    padding: 5px;
-    box-shadow: 0 0 4rem darkgrey;
-    transform: translateY(-1rem) scale(1.05);
+    margin: 4px
 }
-#sekcjatytul {
-    padding-left: 5rem;
-    font-size: 5rem;
+
+
+.darkmode body {
+    background-color: black;
+    color: white;
 }
-#iconopinia {
-    padding-left: 5rem;
+
+.darkmode #hed {
+    background-color: black;
+    color: white;
 }
-#sekcjatytul, #iconopinia {
-    display: inline-block;
-    vertical-align: middle;
+
+.darkmode #borderbuton {
+    background-color: white;
+    color: black;
 }
-#sectionText {
-    text-indent: 30px;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    font-size: 2rem;
-    text-align: left
+
+.darkmode #logbut {
+    color: black;
 }
-section{
-    margin-top:5rem;
+
+.darkmode .navButt,
+.darkmode a {
+    color: white;
 }
+
+.darkmode h2 {
+    color: white;
+}
+
+.darkmode #inspiration,
+.darkmode #share,
+.darkmode #disscus 
+{
+    border:2px solid white;
+}
+
+
 

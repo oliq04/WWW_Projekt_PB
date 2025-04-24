@@ -1,0 +1,258 @@
+﻿body {
+    font-family: "Inter", sans-serif;
+}
+
+
+#hed {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+#main-title {
+    margin-right: auto;
+    white-space: nowrap;
+    padding-left: 1rem;
+}
+
+.navButt {
+    transition: all 0.1s ease-out;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    box-shadow: inset 0 0 0 0 black;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    height: auto;
+    min-height: 4rem;
+    margin-right:8px;
+}
+
+    .navButt:hover {
+        box-shadow: inset 0 0 0 2px black;
+        background-color: rgb(240, 240, 240);
+        transition: all 0.2s ease-in;
+    }
+
+#borderbuton {
+    transition: all 0.1s ease-out;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    box-shadow: inset 0 0 0 0 black;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    height: auto;
+    min-height: 4rem;
+    color: white;
+    background-color: black;
+    border-radius: 40px;
+    border: 3px solid black;
+}
+    #borderbuton:hover {
+        color: black;
+        background-color: rgb(240, 240, 240);
+        transition: all 0.3s ease-in;
+    }
+
+#moon {
+    width: 20px;
+    height: 20px;
+}
+
+#darkmod2 {
+    background-color: transparent;
+    border: 0 solid black;
+    border-radius: 40px;
+    margin-left: auto;
+    align-self: flex-start;
+}
+
+    #darkmod2:hover {
+        background-color: transparent;
+        border: 0 solid black;
+        box-shadow: 0px 1px 1px 1px rgb(90, 90, 90);
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+    }
+.formDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    border: solid black 2px;
+    border-radius: 20px;
+    overflow: hidden; 
+    width: 100%;
+    width: 40rem;
+}
+
+#searchText {
+    flex: 1; /* zajmuje całą dostępną szerokość */
+    height: 2.5rem;
+    border: none;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+#searchButton {
+    border: none;
+    background-color: transparent;
+    padding: 0 10px;
+    cursor: pointer;
+    height: 2.5rem;
+}
+
+.lupka {
+    width: 20px;
+    height: 20px;
+}
+#searchButton:hover {
+    background-color: #f0f0f0;
+    border-radius: 0 20px 20px 0;
+}
+#searchbar {
+
+}
+
+a:link
+{
+    text-decoration: none;
+    color:black;
+
+}
+
+footer
+{
+    
+    text-align: center;
+    
+}
+
+#SekcjaSrodkowy
+{
+    margin: 0 auto;
+    width: 100%;
+}
+
+#oceny
+{
+    background-color: white;
+    width:auto;
+    text-align: center;
+    width:20rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#search
+{
+    height: 3rem;
+    width: 20rem;
+    border-radius: 10px;
+    border-color: black;
+}
+
+#zdjksiazki
+{
+    width:15rem;
+    margin:2rem;
+    padding:1rem;
+}
+
+.kontener
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    
+    
+    
+    
+}
+
+h4
+{
+    text-align: center;
+    margin:1rem;
+}
+
+#info {
+    margin-top: 10rem;
+    background-color: white;
+    width: 20rem;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#userreview
+{
+    background-color:white; /*do zmiany */
+    width:1000px;
+    height:500px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer
+{
+    padding:20px 0;
+    margin:20px;
+    background-color: #3498db ;
+    width: auto;
+}
+
+#searchbardiv
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+#ramka-dla-obiektu
+{
+    width:150px;
+    height:200px;
+    margin: 30px;
+    display:flex;
+    flex-direction: column; 
+    justify-items: center;
+    padding:10px;
+    text-align: center;
+}
+
+#ramka-dla-obiektu:hover
+{
+    background-color: #f0f0f0;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+#obiekt
+{
+    width:100px;
+    height: 150px;
+    padding:1.5rem;
+    justify-content: center;
+
+}

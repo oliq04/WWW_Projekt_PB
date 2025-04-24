@@ -1,4 +1,4 @@
-const images = [
+﻿const images = [
     "https://raw.githubusercontent.com/Kazu-yuki/zdjecia/refs/heads/main/images/04338A03865KS_HD.jpg.webp",
     "https://raw.githubusercontent.com/Kazu-yuki/zdjecia/refs/heads/main/images/harry_potter_i_kamien_filozoficzny_duddle.webp",
     "https://raw.githubusercontent.com/Kazu-yuki/zdjecia/refs/heads/main/konrad-wallenrod_m9C4Rls.webp",

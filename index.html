@@ -1,35 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>Book World</title>
-    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5402/5402751.png">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Book World</title>
+     <link rel="stylesheet" href="index.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <script src="script.js"></script>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     
     <header>
-        <h1 id="Logo">BOOK WORLD</h1>
-        <nav class="side-nav">
-            <ul>
-                <li class="navLi" id="glowna"> <a href="stronaglowna.html">Strona główna</a></li>
-                <li class="navLi" id="logowanie"> <a href="logowanie.html">Zaloguj się</a></li>
-                <li class="navLi" id="dodaj"> <a href="dodajksiazke.html">Dodaj ksiazke</a></li>
-            </ul>
-            <div id="czas"></div>
-             
-        </nav>
+        <div id="hed">
+            <h1 id="main-title">BOOK WORLD</h1>
+            <nav>
+                <a class="navButt" href="index.html">Strona główna</a>
+                <a class="navButt" href="Opinie.html">Opinie</a>
+                <a class="navButt" href="onas.html">O nas</a>
+                <a id="borderbuton" href="logowanie.html">Zaloguj się</a>
+                <button id="darkmod2"><img id="moon" src="https://www.svgrepo.com/show/381213/dark-mode-night-moon.svg" alt="darkmode"> </button>
+            </nav>
+        </div>
     </header>
+
     <section id="searchbar">
         <div id="searchbardiv">
-        <h3>Wyszukiwarka książek</h3>
-        <form action="">
-            <input type="search" name="wyszukiwarka" id="search" placeholder="Wyszukaj...">
-            <button id="znajdzbutton">ZNAJDŹ</button>
-        </form>
+            <h3>Znajdź ulubioną książkę!</h3>
+            <form class="formDiv" action="">
+                    <input type="search" name="wyszukiwarka" id="searchText" placeholder="Wyszukaj...">
+                    <button id="searchButton"><img class="lupka" src="https://cdn-icons-png.flaticon.com/32/751/751463.png" alt="lupa" /></button>
+                
+            </form>
         </div>
     </section>
 
