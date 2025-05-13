@@ -7,7 +7,7 @@
      <link rel="stylesheet" href="index.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <script src="script.js"></script>
+     <script src="indexjs.js"></script>
      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -26,15 +26,28 @@
     </header>
 
     <section id="searchbar">
-        <div id="searchbardiv">
-            <h3>Znajdź ulubioną książkę!</h3>
-            <form class="formDiv" action="">
-                    <input type="search" name="wyszukiwarka" id="searchText" placeholder="Wyszukaj...">
-                    <button id="searchButton"><img class="lupka" src="https://cdn-icons-png.flaticon.com/32/751/751463.png" alt="lupa" /></button>
-                
-            </form>
-        </div>
-    </section>
+  <div id="searchbardiv">
+    <h3>Znajdź ulubioną książkę!</h3>
+    <form class="formDiv" id="searchForm">
+      <input
+        type="search"
+        name="wyszukiwarka"
+        id="searchText"
+        placeholder="Wyszukaj..."
+        required
+      />
+      <button type="submit" id="searchButton">
+        <img
+          class="lupka"
+          src="https://cdn-icons-png.flaticon.com/32/751/751463.png"
+          alt="lupa"
+        />
+      </button>
+    </form>
+  </div>
+  
+  <div id="results"></div>
+</section>
 
     <section id="SekcjaSrodkowy">
 
