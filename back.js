@@ -16,9 +16,9 @@ fetch("http://localhost:3000/ksiazka")
     document.getElementById("popup").style.display = "flex";
   }
 
-  function wyslij(event)
+  function wyslij()
   {
-    event.preventDefault(); 
+     
     var tytul = document.getElementById("tytul").value;
     var autor = document.getElementById("autor").value;
     var rok = document.getElementById("rok").value;
@@ -36,11 +36,10 @@ fetch("http://localhost:3000/ksiazka")
       }) 
     })
       .then(response => response.json())
-     .then(ksiazka => {
-    console.log("Dodano książkę:", ksiazka);
-    nowyObiekt(ksiazka); 
-
-    document.getElementById("popup").style.display = "none";
+      .then(ksiazka => {
+      console.log("Dodano książkę:", ksiazka);
+      nowyObiekt(ksiazka); 
+      document.getElementById("popup").style.display = "none";
   })
 
   }
@@ -65,3 +64,13 @@ function nowyObiekt(ksiazka)
   miejsce.appendChild(divKsiazka);
   
 }
+
+window.onload = function() {
+  fetch("http://localhost:3000/ksiazka")
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(ksiazka => {
+        nowyObiekt(ksiazka);
+      });
+    });
+};

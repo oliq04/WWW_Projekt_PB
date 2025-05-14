@@ -15,101 +15,17 @@
       "id": "0678"
     },
     {
-      "id": "ddcf",
-      "tytul": "Test",
-      "autor": "Testowicz",
-      "rokWydania": "2137",
-      "link": "blablabla"
+      "id": "eae1",
+      "tytul": "Nic mnie nie złamie",
+      "autor": "David Goggins",
+      "rokWydania": "2022",
+      "link": "https://www.galaktyka.com.pl/media/okladki/nic-mnie-nie-zlamie.jpg"
     },
     {
-      "id": "8109",
-      "tytul": "Test",
-      "autor": "Testtt",
-      "rokWydania": "1337",
-      "link": "https://ecsmedia.pl/c/quo-vadis-b-iext161077175.jpg"
-    },
-    {
-      "id": "c704",
-      "tytul": "Test",
-      "autor": "Test",
-      "rokWydania": "22222",
-      "link": "https://ecsmedia.pl/c/quo-vadis-b-iext161077175.jpg"
-    },
-    {
-      "id": "25e4",
-      "tytul": "21441",
-      "autor": "4124142",
-      "rokWydania": "6542134",
-      "link": "https://ecsmedia.pl/c/quo-vadis-b-iext161077175.jpg"
-    },
-    {
-      "id": "ffb6",
-      "tytul": "Tomas",
-      "autor": "TomAh",
-      "rokWydania": "1939",
-      "link": "https://ecsmedia.pl/c/quo-vadis-b-iext161077175.jpg"
-    },
-    {
-      "id": "2063",
-      "tytul": "Testtt",
-      "autor": "Testtttt",
-      "rokWydania": "1999",
-      "link": "https://ecsmedia.pl/c/quo-vadis-b-iext161077175.jpg"
-    },
-    {
-      "id": "00b9",
-      "tytul": "5235",
-      "autor": "532523",
-      "rokWydania": "52352",
-      "link": "https://ecsmedia.pl/c/quo-vadis-b-iext161077175.jpg"
-    },
-    {
-      "id": "e8ac",
-      "tytul": "Test",
-      "autor": "Testowicz",
-      "rokWydania": "6",
-      "link": "https://ecsmedia.pl/c/harry-potter-i-kamien-filozoficzny-tom-1-b-iext161122719.jpg"
-    },
-    {
-      "id": "bb8a",
-      "tytul": "Test",
-      "autor": "Testowicz",
-      "rokWydania": "1342",
-      "link": "https://ecsmedia.pl/c/quo-vadis-b-iext161077175.jpg"
-    },
-    {
-      "id": "a062",
-      "tytul": "Test",
-      "autor": "Testowicz",
-      "rokWydania": "6345",
-      "link": "https://ecsmedia.pl/c/harry-potter-i-kamien-filozoficzny-tom-1-b-iext161122719.jpg"
-    },
-    {
-      "id": "f279",
-      "tytul": "Test",
-      "autor": "Testowicz",
-      "rokWydania": "",
-      "link": "https://ecsmedia.pl/c/harry-potter-i-kamien-filozoficzny-tom-1-b-iext161122719.jpg"
-    },
-    {
-      "id": "15ad",
-      "tytul": "Test",
-      "autor": "Testowicz",
-      "rokWydania": "",
-      "link": "https://ecsmedia.pl/c/quo-vadis-b-iext161077175.jpg"
-    },
-    {
-      "id": "dbf4",
-      "tytul": "Test",
-      "autor": "Testowicz",
-      "rokWydania": "7",
-      "link": "https://ecsmedia.pl/c/quo-vadis-b-iext161077175.jpg"
-    },
-    {
-      "id": "f6f5",
-      "tytul": "Test",
-      "autor": "Testowicz",
-      "rokWydania": "",
+      "id": "ff55",
+      "tytul": "Quo Vadis",
+      "autor": "Henryk Sienkiewicz",
+      "rokWydania": "1800",
       "link": "https://ecsmedia.pl/c/quo-vadis-b-iext161077175.jpg"
     }
   ]
