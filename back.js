@@ -23,8 +23,18 @@ fetch("http://localhost:3000/ksiazka")
     var rok = document.getElementById("rok").value;
     var link = document.getElementById("link").value;
 
-    fetch("http://localhost:3000/ksiazka"), {
-   
+
+    fetch("http://localhost:3000/ksiazka", {
+      method:"POST",
+      headers:{'Content-Type': 'application/json'},
+      body:JSON.stringify({
+        tytul:tytul,
+        autor:autor,
+        rokWydania:rok,
+        link:link
+      }) 
+    })
+      .then(response => response.json())
+      .then(ksiazka => console.log("Dodano książkę:", ksiazka))
   }
-  
-}
+ 

@@ -1,16 +1,23 @@
 {
-    "ksiazka": [
-      {
-        
-        "tytul": "Harry Potter i Kamień Filozoficzny",
-        "autor": "J.K. Rowling",
-        "rokWydania": 1997
-      },
-      {
-        
-        "tytul": "Władca Pierścieni",
-        "autor": "J.R.R. Tolkien",  
-        "rokWydania": 1954
-      }
-    ]
-  }
+  "ksiazka": [
+    {
+      "tytul": "Harry Potter i Kamień Filozoficzny",
+      "autor": "J.K. Rowling",
+      "rokWydania": 1997,
+      "link": "https://cdn-cihla.nitrocdn.com/RBIhfqxjlWjltQeXxEHeWkopHDVdEXlW/assets/images/optimized/rev-06d22eb/www.mediarodzina.pl/mrcore/uploads/2018/12/harry_potter_i_kamien_filozoficzny_duddle.jpg"
+    },
+    {
+      "tytul": "Władca Pierścieni",
+      "autor": "J.R.R. Tolkien",
+      "rokWydania": 1954,
+      "link": "https://fwcdn.pl/fpo/10/65/1065/7912491_1.3.jpg"
+    },
+    {
+      "id": "ddcf",
+      "tytul": "Test",
+      "autor": "Testowicz",
+      "rokWydania": "2137",
+      "link": "blablabla"
+    }
+  ]
+}
