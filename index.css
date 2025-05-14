@@ -228,7 +228,7 @@ footer
    
 }
 
-#ramka-dla-obiektu
+.ramka-dla-obiektu
 {
     width:150px;
     height:200px;
@@ -240,7 +240,7 @@ footer
     text-align: center;
 }
 
-#ramka-dla-obiektu:hover
+.ramka-dla-obiektu:hover
 {
     background-color: #f0f0f0;
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
@@ -248,7 +248,7 @@ footer
 
 }
 
-#obiekt
+.obiekt
 {
     width:100px;
     height: 150px;
