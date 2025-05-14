@@ -3,62 +3,77 @@ document.addEventListener('DOMContentLoaded', () => {
   const input     = document.getElementById('searchText');
   const resultsEl = document.getElementById('results');
 
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const q = input.value.trim();
-    if (!q) return;
+  // debounce: wywoła funkcję dopiero 300ms po ostatnim keystroke
+  let debounceTimer;
+  function debounce(fn, delay) {
+    return (...args) => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => fn(...args), delay);
+    };
+  }
 
-    resultsEl.innerHTML = '<p>Ładowanie wyników…</p>';
+  // główna funkcja wyszukująca
+  async function searchBook(q) {
+    q = q.trim().toLowerCase();
+    if (!q) {
+      resultsEl.innerHTML = '';
+      return;
+    }
+
+    resultsEl.innerHTML = '<p>Ładowanie…</p>';
 
     try {
-      // Uwaga: bez slash przed ?
-      const url = `https://wolnelektury.pl/api/books?search=${encodeURIComponent(q)}`;
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
+      // pobieramy wszystko raz
+      const all = await fetch('/ksiazka')
+        .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
 
-      // obsługa paginacji vs. czysta tablica
-      const booksRaw = Array.isArray(data) ? data : data.results;
+      // filtrowanie
+      const found = all.filter(b =>
+        b.tytul.toLowerCase().includes(q) ||
+        b.autor.toLowerCase().includes(q)
+      );
 
-      // mapujemy na to, co potrzebujemy
-      const books = booksRaw.map(b => ({
-        kind:  b.kind,
-        title: b.title,
-        author:b.author,
-        epoch: b.epoch,
-        // jeśli jest prosty thumbnail, to bierzemy go, 
-        // inaczej składamy pełny URL z cover
-        cover: b.simple_thumb 
-               || `https://wolnelektury.pl/media/${b.cover}`,
-        url:   b.url
-      }));
-
-      if (books.length === 0) {
+      if (found.length === 0) {
         resultsEl.innerHTML = '<p>Brak wyników.</p>';
         return;
       }
 
-      // renderujemy z okładką, tytułem, autorem, rodzajem i epoką
-      resultsEl.innerHTML = books.map(b => `
+      // pokazujemy tylko pierwszy wynik
+      const b = found[0];
+      resultsEl.innerHTML = `
         <div class="book-item">
-          <a href="${b.url}" target="_blank" class="book-link">
-            <img src="${b.cover}" 
-                 alt="Okładka ${b.title}" 
-                 class="book-cover"
-                 onerror="this.style.display='none'">
-            <div class="book-info">
-              <h4>${b.title}</h4>
-              <p><strong>Autor:</strong> ${b.author}</p>
-              <p><strong>Rodzaj:</strong> ${b.kind}</p>
-              <p><strong>Epoka:</strong> ${b.epoch}</p>
+          <a href="#${b.id}" target="_blank" style="display:flex; gap:1rem; align-items:center;">
+            ${b.link
+              ? `<img src="${b.link}"
+                      alt="Okładka ${b.tytul}"
+                      style="width:80px; height:auto; object-fit:cover;"
+                      onerror="this.style.display='none'">`
+              : ''
+            }
+            <div>
+              <h4 style="margin:0 0 .25rem;">${b.tytul}</h4>
+              <p style="margin:0;"><strong>Autor:</strong> ${b.autor}</p>
+              <p style="margin:0;"><strong>Rok wydania:</strong> ${b.rokWydania}</p>
             </div>
           </a>
         </div>
-      `).join('');
-
+      `;
     } catch (err) {
       console.error(err);
       resultsEl.innerHTML = `<p>Błąd: ${err.message}</p>`;
     }
+  }
+
+  const liveSearch = debounce(q => searchBook(q), 300);
+
+  // 1. Obsługa „klasycznego” submit (Enter lub klik)
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    searchBook(input.value);
+  });
+
+  // 2. Obsługa „live” przy każdym wciśnięciu klawisza
+  input.addEventListener('input', e => {
+    liveSearch(e.target.value);
   });
 });
