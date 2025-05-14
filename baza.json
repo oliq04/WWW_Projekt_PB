@@ -1,0 +1,16 @@
+{
+    "ksiazka": [
+      {
+        
+        "tytul": "Harry Potter i Kamień Filozoficzny",
+        "autor": "J.K. Rowling",
+        "rokWydania": 1997
+      },
+      {
+        
+        "tytul": "Władca Pierścieni",
+        "autor": "J.R.R. Tolkien",  
+        "rokWydania": 1954
+      }
+    ]
+  }
