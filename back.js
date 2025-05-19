@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/ksiazka")
+﻿fetch("http://localhost:3000/ksiazka")
   .then(response => {
     if (!response.ok) throw new Error("Błąd HTTP: " + response.status);
     return response.json();
@@ -47,15 +47,21 @@ fetch("http://localhost:3000/ksiazka")
 
 function nowyObiekt(ksiazka)
 {
-  const miejsce= document.getElementById("userreview");
-  const tyt=document.createElement("p");
-  const divKsiazka= document.createElement("div");
-  const imgObiekt= document.createElement("img");
+    const miejsce = document.getElementById("usereview");
+
+    const tyt = document.createElement("p");
+    tyt.className = "tytul-ksiazki";
+
+    const divKsiazka = document.createElement("div");
+    divKsiazka.className = "ramka-dla-obiektu";
+
+    const imgObiekt = document.createElement("img");
+    imgObiekt.className = "obrazek-ksiazki";
 
   imgObiekt.src=ksiazka.link;
   imgObiekt.alt=ksiazka.tytul;
-  
-  divKsiazka.className="ramka-dla-obiektu";
+
+
   tyt.innerText=ksiazka.tytul;
 
   divKsiazka.appendChild(tyt);
