@@ -75,13 +75,62 @@ function nowyObiekt(ksiazka)
   miejsce.appendChild(divKsiazka);
   
 }
+function asideObrazy(ksiazka) {
+    const miejsce = document.getElementById("reklamaZdjęcia");
 
-window.onload = function() {
-  fetch("http://localhost:3000/ksiazka")
-    .then(response => response.json())
-    .then(data => {
-      data.forEach(ksiazka => {
-        nowyObiekt(ksiazka);
-      });
-    });
-};
+    const tyt = document.createElement("p");
+    tyt.className = "aside-tytul-ksiazki";
+
+    const divKsiazka = document.createElement("div");
+    divKsiazka.className = "ramka-dla-aside";
+
+    const imgObiekt = document.createElement("img");
+    imgObiekt.className = "obrazek-aside";
+
+    imgObiekt.src = ksiazka.link;
+    imgObiekt.alt = ksiazka.tytul;
+    tyt.innerText = ksiazka.tytul;
+
+    divKsiazka.appendChild(tyt);
+    divKsiazka.appendChild(imgObiekt);
+    miejsce.appendChild(divKsiazka);
+
+}
+
+window.addEventListener('load', () => {
+    fetch("http://localhost:3000/ksiazka")
+        .then(r => r.json())
+        .then(data => {
+            /* 1. Tworzymy elementy */
+            data.forEach((ksiazka, i) => {
+                if (i < 5) asideObrazy(ksiazka);   // 5 szt. do paska
+                nowyObiekt(ksiazka);               // a wszystkie do sekcji głównej
+            });
+
+            /* 2. Auto-scroll tylko w prawo z pętlą */
+            const container = document.querySelector('.reklama');
+            const cards = Array.from(container.querySelectorAll('.ramka-dla-aside'));
+            const gap = 16;                              // 1 rem = 16 px (dostosuj, jeśli inny)
+            const cardW = cards[0].offsetWidth + gap;      // szerokość karty + odstęp
+            let busy = false;
+
+            setInterval(() => {
+                if (busy) return;
+                busy = true;
+
+                /* przesuwamy o szerokość jednej karty */
+                container.scrollBy({ left: cardW, behavior: 'smooth' });
+
+                /* po zakończeniu animacji (≈700 ms) przenosimy pierwszą kartę na koniec
+                   i cofamy scrollLeft, dzięki czemu ruch jest płynny */
+                setTimeout(() => {
+                    const first = container.firstElementChild;
+                    container.appendChild(first);
+                    container.scrollLeft -= cardW;
+                    busy = false;
+                }, 700); // czas ≥ czas animacji smooth scroll
+            }, 3000);   // co 3 s
+        })
+        .catch(console.error);
+});
+

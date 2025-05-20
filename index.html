@@ -1,18 +1,22 @@
 ﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Book World</title>
-     <link rel="stylesheet" href="index.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <script src="indexjs.js"></script>
-     <script src="back.js"></script>
-     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book World</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <script src="back.js" defer></script>
+    <script src="indexjs.js" defer></script>
+
 </head>
 <body>
-    
+
     <header id="headerr">
         <div id="hed">
             <h1 id="main-title">BOOK WORLD</h1>
@@ -21,47 +25,47 @@
                 <a class="navButt" href="Opinie.html">Opinie</a>
                 <a class="navButt" href="onas.html">O nas</a>
                 <button type="button" class="navButt" onclick="dodajKsiazke()">Dodaj ksiazke</button>
-                
+
                 <button id="darkmod2"><img id="moon" src="https://www.svgrepo.com/show/381213/dark-mode-night-moon.svg" alt="darkmode"> </button>
             </nav>
         </div>
     </header>
 
+    <aside class="reklama" id="reklamaZdjęcia">
 
+    </aside>
 
     <section id="searchbar">
-  <div id="searchbardiv">
-    <h3 class="serchbarTytul">Znajdź ulubioną książkę!</h3>
-    <form class="formDiv" id="searchForm">
-      <input
-        type="search"
-        name="wyszukiwarka"
-        id="searchText"
-        placeholder="Wyszukaj..."
-        required
-      />
-      <button type="submit" id="searchButton">
-        <img
-          class="lupka"
-          src="https://cdn-icons-png.flaticon.com/32/751/751463.png"
-          alt="lupa"
-        />
-      </button>
-    </form>
-  </div>
-  
-  <div id="results"></div>
-</section>
+        <div id="searchbardiv">
+            <h3 class="serchbarTytul">Znajdź ulubioną książkę!</h3>
+            <form class="formDiv" id="searchForm">
+                <input type="search"
+                       name="wyszukiwarka"
+                       id="searchText"
+                       placeholder="Wyszukaj..."
+                       required />
+                <button type="submit" id="searchButton">
+                    <img class="lupka"
+                         src="https://cdn-icons-png.flaticon.com/32/751/751463.png"
+                         alt="lupa" />
+                </button>
+            </form>
+        </div>
+
+        <div id="results"></div>
+    </section>
+
+
 
     <section id="SekcjaSrodkowy">
 
         <main id="srodkowy">
             <div class="kontenerUsereview">
-            
 
-            
+
+
                 <div id="usereview">
-                
+
                 </div>
             </div>
 
@@ -70,9 +74,9 @@
 
 
 
-    <div id="popup">
+    <main id="popup">
         <div id="popup-content">
-            <button onclick="ZamknijPopup()" class="popupClose" ><img class="popupCloseImg" src="https://cdn-icons-png.flaticon.com/128/5368/5368396.png" alt="zamknij" /></button>
+            <button onclick="ZamknijPopup()" class="popupClose"><img class="popupCloseImg" src="https://cdn-icons-png.flaticon.com/128/5368/5368396.png" alt="zamknij" /></button>
             <label class="formLabel" for="tytul">Tytuł:</label>
             <input class="formInput" type="text" id="tytul" name="tytul" required>
             <label class="formLabel" for="autor">Autor:</label>
@@ -84,12 +88,12 @@
             <button class="formButt" type="button" id="dodaj-ksiazke" onclick="wyslij(event)">Dodaj książkę</button>
         </div>
 
-    </div>
+    </main>
 
 
     <footer><p>Copyright 2025</p></footer>
-    
 
-    
+
+
 </body>
 </html>
