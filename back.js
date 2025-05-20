@@ -15,6 +15,11 @@
   {
     document.getElementById("popup").style.display = "flex";
   }
+    
+  function ZamknijPopup()
+  {
+    document.getElementById("popup").style.display = "none";
+  }
 
   function wyslij()
   {
