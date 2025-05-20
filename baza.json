@@ -34,6 +34,41 @@
       "autor": "joł",
       "rokWydania": "20022222",
       "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUXzTy9wn89AI5g2g5477cI9TsnA9y97w06g&s"
+    },
+    {
+      "id": "5e16",
+      "tytul": "Zbrodnia i kara",
+      "autor": "Fiodor Dostojewski",
+      "rokWydania": "1866",
+      "link": "https://ecsmedia.pl/c/zbrodnia-i-kara-wydanie-z-opracowaniem-b-iext180973205.jpg"
+    },
+    {
+      "id": "be8a",
+      "tytul": "Sto lat samotności",
+      "autor": "Gabriel García Márquez",
+      "rokWydania": "1967",
+      "link": "https://s.lubimyczytac.pl/upload/books/5045000/5045946/1030062-352x500.jpg"
+    },
+    {
+      "id": "186b",
+      "tytul": "Duma i uprzedzenie",
+      "autor": "Jane Austen",
+      "rokWydania": "1813",
+      "link": "https://s.lubimyczytac.pl/upload/books/5131000/5131228/1182849-352x500.jpg"
+    },
+    {
+      "id": "fd5e",
+      "tytul": "Rok 1984",
+      "autor": "George Orwell",
+      "rokWydania": "1949",
+      "link": "https://ecsmedia.pl/c/rok-1984-audiobook-b-iext127181431.jpg"
+    },
+    {
+      "id": "0ba6",
+      "tytul": "Buszujący w zbożu",
+      "autor": "J.D. Salinger",
+      "rokWydania": "1951",
+      "link": "https://static.profinfo.pl/storage/image/core_products/2024/3/30/69530ac7da0bce1c2156e5c8a8c228a3/admin/preview/01138B01622KS_HD.jpg.webp"
     }
   ]
 }
