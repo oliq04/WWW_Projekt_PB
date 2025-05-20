@@ -46,7 +46,7 @@
             ${b.link
               ? `<img src="${b.link}"
                       alt="Okładka ${b.tytul}"
-                      style="width:80px; height:auto; object-fit:cover;"
+                      style="width:120px; height:200px; object-fit:cover;"
                       onerror="this.style.display='none'">`
               : ''
             }
