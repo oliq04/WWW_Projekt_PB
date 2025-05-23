@@ -1,81 +1,77 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
-  const form      = document.getElementById('searchForm');
-  const input     = document.getElementById('searchText');
-  const resultsEl = document.getElementById('results');
+  const formularzyk = document.getElementById('searchForm');
+  const inpucik = document.getElementById('searchText');
+  const wyniczek = document.getElementById('results');
 
-  // debounce: wywoła funkcję dopiero 300ms po ostatnim keystroke
-  let debounceTimer;
-  function debounce(fn, delay) {
-    return (...args) => {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(() => fn(...args), delay);
+  let opóźnienieTime;
+  function opóźnienie(fn, opo){
+    return(...args) => {
+      clearTimeout(opóźnienieTime)
+      opóźnienieTime = setTimeout(() => fn(...args), opo);
     };
   }
 
-  // główna funkcja wyszukująca
-  async function searchBook(q) {
-    q = q.trim().toLowerCase();
-    if (!q) {
-      resultsEl.innerHTML = '';
+  async function wyszukiwanie(przeszukaj){
+    przeszukaj = przeszukaj.trim().toLowerCase();
+    if(!przeszukaj){
+      wyniczek.innerHTML = '';
       return;
     }
 
-    resultsEl.innerHTML = '<p>Ładowanie…</p>';
+    wyniczek.innerHTML = '<p>Ładowanie...</p>';
 
     try {
-      // pobieramy wszystko raz
-      const all = await fetch('/ksiazka')
-        .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+      const ksiazki = await fetch('/ksiazka').then(ksiazki => {
+        if(!ksiazki.ok) throw new Error(ksiazki.status);
+        return ksiazki.json();
+      });
 
-      // filtrowanie
-      const found = all.filter(b =>
-        b.tytul.toLowerCase().includes(q) ||
-        b.autor.toLowerCase().includes(q)
-      );
+      const dopasowanie = ksiazki.filter(ksiazka => 
+        ksiazka.tytul.toLowerCase().includes(przeszukaj) ||
+        ksiazka.autor.toLowerCase().includes(przeszukaj) );
 
-      if (found.length === 0) {
-        resultsEl.innerHTML = '<p>Brak wyników.</p>';
-        return;
-      }
+        if(dopasowanie.length === 0 ){
+          wyniczek.innerHTML = '<p>Brak wyników.</p>';
+          return;
+        }
 
-      // pokazujemy tylko pierwszy wynik
-      const b = found[0];
-      resultsEl.innerHTML = `
-        <div class="book-item">
-          <a href="#${b.id}" target="_blank" style="display:flex; gap:1rem; align-items:center;">
-            ${b.link
-              ? `<img src="${b.link}"
-                      alt="Okładka ${b.tytul}"
-                      style="width:120px; height:200px; object-fit:cover;"
-                      onerror="this.style.display='none'">`
-              : ''
-            }
-            <div>
-              <h4 style="margin:0 0 .25rem;">${b.tytul}</h4>
-              <p style="margin:0;"><strong>Autor:</strong> ${b.autor}</p>
-              <p style="margin:0;"><strong>Rok wydania:</strong> ${b.rokWydania}</p>
-            </div>
-          </a>
-        </div>
-      `;
-    } catch (err) {
-      console.error(err);
-      resultsEl.innerHTML = `<p>Błąd: ${err.message}</p>`;
+        wyswietlWyniki(dopasowanie[0]);
+    }catch (error) {
+      console.error(error);
+      wyniczek.innerHTML = '<p>Błąd podczas wyszukiwania. Spróbuj ponownie.</p>';
     }
   }
 
-  const liveSearch = debounce(q => searchBook(q), 300);
+  function wyswietlWyniki(book) {
+    wyniczek.innerHTML = `
+      <div class="book-item">
+        <a href="#${book.id}" target="_blank" style="display:flex; gap:1rem; align-items:center;">
+          ${book.link
+            ? `<img src="${book.link}"
+                    alt="Okładka ${book.tytul}"
+                    style="width:120px; height:200px; object-fit:cover;"
+                    onerror="this.style.display='none'">`
+            : ''
+          }
+          <div>
+            <h4 style="margin:0 0 .25rem;">${book.tytul}</h4>
+            <p style="margin:0;"><strong>Autor:</strong> ${book.autor}</p>
+            <p style="margin:0;"><strong>Rok wydania:</strong> ${book.rokWydania}</p>
+          </div>
+        </a>
+      </div>
+    `;
+  }
 
-  // 1. Obsługa „klasycznego” submit (Enter lub klik)
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    searchBook(input.value);
+    const opóźnieniewyszukiwania = opóźnienie(q => wyszukiwanie(q), 300);
+
+  formularzyk.addEventListener('submit', wydarzenie => {
+    wydarzenie.preventDefault();
+    wyszukiwanie(inpucik.value);
   });
 
-  // 2. Obsługa „live” przy każdym wciśnięciu klawisza
-  input.addEventListener('input', e => {
-    liveSearch(e.target.value);
+  formularzyk.addEventListener('input', wydarzenie => {
+    opóźnieniewyszukiwania(wydarzenie.target.value);
   });
+
 });
-
-
