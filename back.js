@@ -23,6 +23,18 @@
 
   function wyslij()
   {
+   const inputs = document.querySelectorAll(".formInput");
+
+    for (const input of inputs) {
+      if (input.value.trim() === "") {
+        alert("Pole " + input.name + " nie może być puste! Uzupełnij wszystkie pola.");
+        return; 
+      }
+      if (input.name === "link" && !input.value.startsWith("http")) {
+        alert("Link musi zaczynać się od 'http' lub 'https'.");
+        return; 
+      }
+    }
      
     var tytul = document.getElementById("tytul").value;
     var autor = document.getElementById("autor").value;
