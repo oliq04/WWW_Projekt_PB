@@ -73,6 +73,8 @@ nav {
 #moon {
     width: 20px;
     height: 20px;
+    fill: currentColor
+    
 }
 
 #darkmod2 {
@@ -181,6 +183,22 @@ nav {
 {
     border:2px solid white;
 }
+.moon {
+  filter: invert(0); 
+  transition: filter 0.3s ease;
+}
+.darkmode .moon {
+  filter: invert(1);
+}
 
+#iconopinia,
+#iconinspiracja,
+#icondyskusja {
+  transition: filter 0.3s ease;
+}
 
-
+.darkmode #iconopinia,
+.darkmode #iconinspiracja,
+.darkmode #icondyskusja {
+  filter: invert(1);
+}
