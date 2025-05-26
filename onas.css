@@ -142,3 +142,25 @@ section{
     margin-top:5rem;
 }
 
+.darkmode body {
+    background-color: black;
+    color: white;
+}
+
+.darkmode nav {
+ background-color: black;
+ color:white;
+}
+
+.darkmode a {
+    color: white;
+}
+
+.moon {
+  filter: invert(0); 
+  transition: filter 0.3s ease;
+}
+
+.darkmode .moon {
+  filter: invert(1);
+}
