@@ -208,3 +208,56 @@ nav {
     color: white;
     transition: all 0.2s ease-in;
 }
+
+@media (max-width: 480px) {
+  #hed {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-items: center;
+    width: 100%;
+  }
+
+  .navButt,
+  #darkmod2 {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #main-title {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  #glowny-content {
+    font-size: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .hooovery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #share,
+  #inspiration,
+  #disscus {
+    width: 90%;
+    margin: 10px 0;
+  }
+}
