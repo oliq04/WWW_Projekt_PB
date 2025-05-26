@@ -405,3 +405,173 @@ footer {
     text-align: center;
     background-image: linear-gradient(lightgray, darkgray);
 }
+.moon {
+  filter: invert(0); 
+  transition: filter 0.3s ease;
+}
+
+.darkmode .moon {
+  filter: invert(1);
+}
+
+.darkmode body {
+  background-color: black;
+  color: white;
+}
+
+.darkmode header,
+.darkmode #hed {
+  background-color: black;
+  color: white;
+  box-shadow: 0px 0px 20px 20px rgba(255, 255, 255, 0.1);
+}
+
+.darkmode #main-title {
+  color: white;
+}
+
+/* Nawigacja */
+.darkmode .navButt,
+.darkmode a {
+  color: white;
+}
+
+.darkmode .navButt:hover {
+  background-color: rgb(40, 40, 40);
+  box-shadow: inset 0 0 0 2px white;
+  color: white;
+}
+
+/* Dark button */
+.moon {
+  filter: invert(0);
+  transition: filter 0.3s ease;
+}
+
+.darkmode .moon {
+  filter: invert(1);
+}
+
+.darkmode #darkmod2:hover {
+  box-shadow: 0px 1px 1px 1px white;
+}
+
+/* Przyciski formularza */
+.darkmode #borderbuton {
+  background-color: white;
+  color: black;
+}
+
+.darkmode #borderbuton:hover {
+  background-color: rgb(200, 200, 200);
+  color: black;
+}
+
+/* Sekcja inspiracje, opinie, dyskusje */
+.darkmode #inspiration,
+.darkmode #share,
+.darkmode #disscus {
+  border: 2px solid white;
+}
+
+/* Ikony z Freepik – odwrócenie kolorów */
+.darkmode #iconopinia,
+.darkmode #iconinspiracja,
+.darkmode #icondyskusja {
+  filter: invert(1);
+  transition: filter 0.3s ease;
+}
+
+/* Sekcja popup i oceny */
+.darkmode #oceny,
+.darkmode #info,
+.darkmode #popup-content {
+  background-color: #222;
+  color: white;
+  border: 2px solid white;
+}
+
+/* Karty książek */
+.darkmode .ramka-dla-obiektu {
+  background-color: #1a1a1a;
+  border-color: white;
+  color: white;
+}
+
+.darkmode .ramka-dla-obiektu:hover {
+  background-color: #2a2a2a;
+  box-shadow: 0px 0px 20px 20px rgba(255, 255, 255, 0.05);
+}
+
+.darkmode .tytul-ksiazki {
+  color: white;
+}
+
+/* Footer */
+.darkmode footer {
+  background-image: linear-gradient(#333, #111);
+  color: white;
+}
+
+/* Formularz i inputy */
+.darkmode .formInput,
+.darkmode #search,
+.darkmode #searchText {
+  background-color: #1e1e1e;
+  color: white;
+  border-color: white;
+}
+
+.darkmode .formButt {
+  background-color: #111;
+  color: white;
+  border-color: white;
+}
+
+.darkmode .formLabel {
+  color: white;
+}
+
+.darkmode #searchButton {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.darkmode #searchButton:hover {
+  background-color: #333;
+}
+
+.darkmode #usereview,
+.darkmode .kontenerUsereview,
+.darkmode #srodkowy,
+.darkmode #SekcjaSrodkowy {
+  background-color: #000;
+  color: white;
+}
+
+.darkmode .ramka-dla-aside {
+  background: transparent ;
+  border: none ;
+  box-shadow: none ;
+  padding: 10;
+  margin: 10;
+}
+
+
+.darkmode .obrazek-aside {
+  border-radius: 5;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.darkmode .aside-tytul-ksiazki {
+  
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  
+}
