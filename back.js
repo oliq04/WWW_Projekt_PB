@@ -115,7 +115,7 @@ window.addEventListener('load', () => {
         .then(data => {
             /* 1. Tworzymy elementy */
             data.forEach((ksiazka, i) => {
-                if (i < 5) asideObrazy(ksiazka);   // 5 szt. do paska
+                if (i < 8) asideObrazy(ksiazka);   // 5 szt. do paska
                 nowyObiekt(ksiazka);               // a wszystkie do sekcji głównej
             });
 
