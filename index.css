@@ -110,28 +110,27 @@ nav {
 
 .reklama {
     display: flex;
+    width: 100vw;
+    height: 29rem;
+    min-width: 0;
+    gap: 1rem;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    min-width: 0; 
-    width: 100vw; 
-    gap: 1rem;
-    height: 29rem;
+    -ms-overflow-style: none; /* IE/Edge Legacy */
+    scrollbar-width: none; /* Firefox */
+    overscroll-behavior-x: contain;
+    overscroll-behavior-y: auto;
 }
+    .reklama::-webkit-scrollbar {
+        display: none;
+    }
 
     .reklama::-webkit-scrollbar {
         display: none;
     }
 
-.reklama {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overscroll-behavior: contain;
-    gap: 1rem;
-    height: 29rem;
-    min-width: 0;
-}
 
 .ramka-dla-aside {
     flex: 0 0 20rem; 
