@@ -108,17 +108,19 @@ nav {
     }
 
 #glowny-content {
+    display:flex;
     border-radius: 20px;
     border: 2px solid black;
-    padding: 5px;
+    padding: 8px;
     transition: all 0.4s;
+    align-items: center;
 }
 #glowny-content:hover {
     border-radius: 20px;
     border: 2px solid black;
-    padding: 5px;
-    box-shadow: 0 0 4rem darkgrey;
-    transform: translateY(-1rem) scale(1.05);
+    padding: 10px;
+    box-shadow: 0 0 2rem darkgrey;
+    transform: translateY(-0.5rem) scale(1.00);
 }
 #sekcjatytul {
     padding-left: 5rem;
@@ -163,4 +165,91 @@ section{
 
 .darkmode .moon {
   filter: invert(1);
+}
+.darkmode footer {
+    background-color: black;
+    color: white;
+}
+
+
+
+footer {
+    margin-top:10px;
+    padding: 20px 0;
+    width: 100%;
+    background-color: white;
+    width: auto;
+    text-align: center;
+    
+}
+
+#reade 
+{
+    width:450px;
+    height: 300px;
+    border-radius: 30px;
+}
+
+.darkmode #glowny-content
+{
+    border: 2px solid white;
+
+}
+
+@media screen and (max-width: 1280px) {
+     *{
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 10px;
+        margin: 0;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+
+    #glowny-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    #sekcjatytul {
+        padding-left: 0;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    #iconopinia {
+        padding-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    #sectionText {
+        padding: 1rem;
+        font-size: 1.25rem;
+        width: 100%;
+    }
+
+    #reade {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 1rem 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
 }
