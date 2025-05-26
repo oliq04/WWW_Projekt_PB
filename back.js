@@ -110,37 +110,51 @@ function asideObrazy(ksiazka) {
 }
 
 window.addEventListener('load', () => {
-    fetch("http://localhost:3000/ksiazka")
+    fetch('http://localhost:3000/ksiazka')
         .then(r => r.json())
-        .then(data => {
+        .then(async data => {
+
             /* 1. Tworzymy elementy */
             data.forEach((ksiazka, i) => {
-                if (i < 8) asideObrazy(ksiazka);   // 5 szt. do paska
-                nowyObiekt(ksiazka);               // a wszystkie do sekcji głównej
+                if (i < 8) asideObrazy(ksiazka);   // 8 kart w pasku
+                nowyObiekt(ksiazka);               // wszystko do sekcji głównej
             });
 
-            /* 2. Auto-scroll tylko w prawo z pętlą */
+            /* 2. Zaczekaj, aż wszystkie obrazki w pasku są załadowane --------------- */
             const container = document.querySelector('.reklama');
+            await Promise.all(
+                Array.from(container.querySelectorAll('img'))
+                    .filter(img => !img.complete)
+                    .map(img =>
+                        new Promise(res => { img.addEventListener('load', res); })
+                    )
+            );
+
+            /* 3. POLICZEMY dynamicznie szerokość karty + rzeczywisty gap ------------ */
             const cards = Array.from(container.querySelectorAll('.ramka-dla-aside'));
-            const gap = 16;                              // 1 rem = 16 px (dostosuj, jeśli inny)
-            const cardW = cards[0].offsetWidth + gap;      // szerokość karty + odstęp
+
+            const styles = getComputedStyle(container);
+            // w elastycznym wierszu gap w poziomie to column-gap (lub samo gap)
+            const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+
+            const cardW = cards[0].offsetWidth + gap;
+
+            /* 4. Auto-scroll --------------------------------------------------------- */
             let busy = false;
 
             setInterval(() => {
                 if (busy) return;
                 busy = true;
 
-                /* przesuwamy o szerokość jednej karty */
                 container.scrollBy({ left: cardW, behavior: 'smooth' });
 
-                /* po zakończeniu animacji (≈700 ms) przenosimy pierwszą kartę na koniec
-                   i cofamy scrollLeft, dzięki czemu ruch jest płynny */
+                /* po zakończeniu animacji przerzuć kartę i cofnij scroll */
                 setTimeout(() => {
                     const first = container.firstElementChild;
                     container.appendChild(first);
                     container.scrollLeft -= cardW;
                     busy = false;
-                }, 700); // czas ≥ czas animacji smooth scroll
+                }, 700); // >= czas smooth-scroll (ms)
             }, 3000);   // co 3 s
         })
         .catch(console.error);
