@@ -21,19 +21,28 @@
     document.getElementById("popup").style.display = "none";
   }
 
-  function wyslij()
+  function wyslij(event)
   {
    const inputs = document.querySelectorAll(".formInput");
 
     for (const input of inputs) {
       if (input.value.trim() === "") {
         alert("Pole " + input.name + " nie może być puste! Uzupełnij wszystkie pola.");
+        event.preventDefault();
         return; 
       }
       if (input.name === "link" && !input.value.startsWith("http")) {
         alert("Link musi zaczynać się od 'http' lub 'https'.");
+        event.preventDefault();
         return; 
       }
+      if (input.name === 'rok' && input.value < 0 || input.lenght > 4 || isNaN(input.value)) 
+      {
+        alert("Podaj prawidłowy rok publikacji.");
+        event.preventDefault();
+        return; 
+      }
+      
     }
      
     var tytul = document.getElementById("tytul").value;
