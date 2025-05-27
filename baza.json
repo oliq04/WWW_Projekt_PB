@@ -69,7 +69,27 @@
       "autor": "J.D. Salinger",
       "rokWydania": "1951",
       "link": "https://static.profinfo.pl/storage/image/core_products/2024/3/30/69530ac7da0bce1c2156e5c8a8c228a3/admin/preview/01138B01622KS_HD.jpg.webp"
+    },
+    {
+      "id": "7a83",
+      "tytul": "Pan Tadeusz",
+      "autor": "Adam Mickiewicz",
+      "rokWydania": "1780",
+      "link": "https://ecsmedia.pl/c/pan-tadeusz-b-iext180308072.jpg"
+    },
+    {
+      "id": "f8d9",
+      "tytul": "Lalka",
+      "autor": "Bolesław Prus",
+      "rokWydania": "-333",
+      "link": "https://ecsmedia.pl/c/lalka-b-iext183705223.jpg"
+    },
+    {
+      "id": "35d3",
+      "tytul": "Lalka",
+      "autor": "Bolesław Prus",
+      "rokWydania": "333",
+      "link": "https://ecsmedia.pl/c/lalka-b-iext183705223.jpg"
     }
-  
   ]
 }
