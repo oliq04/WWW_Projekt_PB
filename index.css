@@ -10,6 +10,24 @@ header {
     z-index: 7;
 }
 
+@media screen and (max-width: 1250px) {
+    nav {
+        flex-direction: column;
+        margin-right:1rem;
+
+    }
+
+    #main-title {
+    margin-right:0px;
+    }
+
+    #darkmod2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
 
 #hed {
     width: 100%;
@@ -124,8 +142,8 @@ aside {
     overflow-y: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    -ms-overflow-style: none; /* IE/Edge Legacy */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     overscroll-behavior-x: contain;
     overscroll-behavior-y: auto;
 }
@@ -437,7 +455,7 @@ footer {
   color: white;
 }
 
-/* Nawigacja */
+
 .darkmode .navButt,
 .darkmode a {
   color: white;
@@ -449,7 +467,7 @@ footer {
   color: white;
 }
 
-/* Dark button */
+
 .moon {
   filter: invert(0);
   transition: filter 0.3s ease;
@@ -463,7 +481,7 @@ footer {
   box-shadow: 0px 1px 1px 1px white;
 }
 
-/* Przyciski formularza */
+
 .darkmode #borderbuton {
   background-color: white;
   color: black;
@@ -474,14 +492,14 @@ footer {
   color: black;
 }
 
-/* Sekcja inspiracje, opinie, dyskusje */
+
 .darkmode #inspiration,
 .darkmode #share,
 .darkmode #disscus {
   border: 2px solid white;
 }
 
-/* Ikony z Freepik – odwrócenie kolorów */
+
 .darkmode #iconopinia,
 .darkmode #iconinspiracja,
 .darkmode #icondyskusja {
@@ -489,7 +507,7 @@ footer {
   transition: filter 0.3s ease;
 }
 
-/* Sekcja popup i oceny */
+
 .darkmode #oceny,
 .darkmode #info,
 .darkmode #popup-content {
@@ -498,7 +516,7 @@ footer {
   border: 2px solid white;
 }
 
-/* Karty książek */
+
 .darkmode .ramka-dla-obiektu {
   background-color: #1a1a1a;
   border-color: white;
@@ -514,13 +532,13 @@ footer {
   color: white;
 }
 
-/* Footer */
+
 .darkmode footer {
   background-image: linear-gradient(#333, #111);
   color: white;
 }
 
-/* Formularz i inputy */
+
 .darkmode .formInput,
 .darkmode #search,
 .darkmode #searchText {
@@ -595,4 +613,100 @@ footer {
 .darkmode .navButt {
     background-color: black;
     border: none;
+}
+
+@media screen and (max-width: 780px) {
+    #hed {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #main-title {
+        display: flex;
+        margin-right: 0;
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+
+    .navButt {
+        justify-content: center;
+        -webkit-align-items: inherit;
+        align-items: inherit;
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        height: 1.2rem;
+    }
+
+
+    #darkmod2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .formDiv {
+        width: 90%;
+    }
+
+    .serchbarTytul {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .reklama {
+        height: 15rem;
+        gap: 0px;
+    }
+
+    .ramka-dla-aside {
+        flex: 0 0 10rem;
+        scroll-snap-align: start;
+        background-color: white;
+        height: 100%;
+        padding: 1rem;
+        border-radius: 10px;
+        box-sizing: border-box;
+        width: 5rem;
+        padding: 0.5rem;
+    }
+
+    .obrazek-aside {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    #usereview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(5rem,1fr));
+        grid-auto-rows: 13rem;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .ramka-dla-obiektu {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .tytul-ksiazki {
+        font-size: 0.7rem;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 0px;
+    }
 }

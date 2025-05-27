@@ -155,7 +155,7 @@ window.addEventListener('load', () => {
                     container.scrollLeft -= cardW;
                     busy = false;
                 }, 700); // >= czas smooth-scroll (ms)
-            }, 3000);   // co 3 s
+            }, 30000000);   // co 3 s
         })
         .catch(console.error);
 });
