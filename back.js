@@ -123,13 +123,11 @@ window.addEventListener('load', () => {
         .then(r => r.json())
         .then(async data => {
 
-            /* 1. Tworzymy elementy */
             data.forEach((ksiazka, i) => {
-                if (i < 8) asideObrazy(ksiazka);   // 8 kart w pasku
-                nowyObiekt(ksiazka);               // wszystko do sekcji głównej
+                if (i < 8) asideObrazy(ksiazka);   
+                nowyObiekt(ksiazka);    
             });
 
-            /* 2. Zaczekaj, aż wszystkie obrazki w pasku są załadowane --------------- */
             const container = document.querySelector('.reklama');
             await Promise.all(
                 Array.from(container.querySelectorAll('img'))
@@ -139,16 +137,14 @@ window.addEventListener('load', () => {
                     )
             );
 
-            /* 3. POLICZEMY dynamicznie szerokość karty + rzeczywisty gap ------------ */
             const cards = Array.from(container.querySelectorAll('.ramka-dla-aside'));
 
             const styles = getComputedStyle(container);
-            // w elastycznym wierszu gap w poziomie to column-gap (lub samo gap)
+
             const gap = parseFloat(styles.columnGap || styles.gap) || 0;
 
             const cardW = cards[0].offsetWidth + gap;
 
-            /* 4. Auto-scroll --------------------------------------------------------- */
             let busy = false;
 
             setInterval(() => {
@@ -157,14 +153,13 @@ window.addEventListener('load', () => {
 
                 container.scrollBy({ left: cardW, behavior: 'smooth' });
 
-                /* po zakończeniu animacji przerzuć kartę i cofnij scroll */
                 setTimeout(() => {
                     const first = container.firstElementChild;
                     container.appendChild(first);
                     container.scrollLeft -= cardW;
                     busy = false;
-                }, 700); // >= czas smooth-scroll (ms)
-            }, 3000);   // co 3 s
+                }, 700); 
+            }, 3000);   
         })
         .catch(console.error);
 });
