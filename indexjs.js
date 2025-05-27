@@ -11,59 +11,46 @@
     };
   }
 
-  async function wyszukiwanie(przeszukaj){
+  async function wyszukiwanie(przeszukaj) {
     przeszukaj = przeszukaj.trim().toLowerCase();
-    if(!przeszukaj){
-      wyniczek.innerHTML = '';
+    if (!przeszukaj) {
+      localStorage.setItem('dopasowaneKsiazki', JSON.stringify([]));
       return;
     }
 
-    wyniczek.innerHTML = '<p>Ładowanie...</p>';
-
     try {
-      const ksiazki = await fetch('/ksiazka').then(ksiazki => {
-        if(!ksiazki.ok) throw new Error(ksiazki.status);
-        return ksiazki.json();
-      });
+      const ksiazki = await fetch('/ksiazka').then(r => r.json());
 
-      const dopasowanie = ksiazki.filter(ksiazka => 
-        ksiazka.tytul.toLowerCase().includes(przeszukaj) ||
-        ksiazka.autor.toLowerCase().includes(przeszukaj) );
+      const regex = new RegExp(przeszukaj, 'i');
+      const dopasowanie = ksiazki.filter(ksiazka =>
+        regex.test(ksiazka.tytul) || regex.test(ksiazka.autor)
+      );
 
-        if(dopasowanie.length === 0 ){
-          wyniczek.innerHTML = '<p>Brak wyników.</p>';
-          return;
-        }
+      localStorage.setItem('dopasowaneKsiazki', JSON.stringify(dopasowanie));
 
-        wyswietlWyniki(dopasowanie[0]);
-    }catch (error) {
+      zmienWidocznoscKsiazek();
+    } catch (error) {
       console.error(error);
-      wyniczek.innerHTML = '<p>Błąd podczas wyszukiwania. Spróbuj ponownie.</p>';
     }
   }
 
-  function wyswietlWyniki(book) {
-    wyniczek.innerHTML = `
-      <div class="book-item">
-        <a href="#${book.id}" target="_blank" style="display:flex; gap:1rem; align-items:center;">
-          ${book.link
-            ? `<img src="${book.link}"
-                    alt="Okładka ${book.tytul}"
-                    style="width:120px; height:200px; object-fit:cover;"
-                    onerror="this.style.display='none'">`
-            : ''
-          }
-          <div>
-            <h4 style="margin:0 0 .25rem;">${book.tytul}</h4>
-            <p style="margin:0;"><strong>Autor:</strong> ${book.autor}</p>
-            <p style="margin:0;"><strong>Rok wydania:</strong> ${book.rokWydania}</p>
-          </div>
-        </a>
-      </div>
-    `;
+  function zmienWidocznoscKsiazek() {
+    const dopasowaneKsiazki = JSON.parse(localStorage.getItem('dopasowaneKsiazki')) || [];
+    const wszystkieKsiazki = document.querySelectorAll('.ramka-dla-obiektu');
+
+    wszystkieKsiazki.forEach(ksiazka => {
+        ksiazka.style.display = 'none'; 
+    });
+
+    dopasowaneKsiazki.forEach(ksiazka => {
+        const ksiazkaDiv = document.querySelector(`.ramka-dla-obiektu img[alt="${ksiazka.tytul}"]`);
+        if (ksiazkaDiv) {
+            ksiazkaDiv.closest('.ramka-dla-obiektu').style.display = 'block';
+        }
+    });
   }
 
-    const opóźnieniewyszukiwania = opóźnienie(q => wyszukiwanie(q), 300);
+  const opóźnieniewyszukiwania = opóźnienie(q => wyszukiwanie(q), 300);
 
   formularzyk.addEventListener('submit', wydarzenie => {
     wydarzenie.preventDefault();
