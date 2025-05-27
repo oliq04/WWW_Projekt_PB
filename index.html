@@ -25,32 +25,35 @@
                 <a class="navButt" href="index.html">Strona główna</a>
                 <a class="navButt" href="Opinie.html">Opinie</a>
                 <a class="navButt" href="onas.html">O nas</a>
-                <button type="button" class="navButt" onclick="dodajKsiazke()">Dodaj ksiazke</button>
-
                 <button id="darkmod2" onclick="darkMode()"><img id="moon" src="https://www.svgrepo.com/show/381213/dark-mode-night-moon.svg" alt="darkmode" class="moon"> </button>
             </nav>
         </div>
     </header>
 
     <aside class="reklama" id="reklamaZdjęcia">
-
     </aside>
 
     <section id="searchbar">
         <div id="searchbardiv">
             <h3 class="serchbarTytul">Znajdź ulubioną książkę!</h3>
-            <form class="formDiv" id="searchForm">
-                <input type="search"
-                       name="wyszukiwarka"
-                       id="searchText"
-                       placeholder="Wyszukaj..."
-                       required />
-                <button type="submit" id="searchButton">
-                    <img class="lupka"
-                         src="https://cdn-icons-png.flaticon.com/32/751/751463.png"
-                         alt="lupa" />
-                </button>
-            </form>
+            <div class="wrapFormDiv">
+                <form class="formDiv" id="searchForm">
+                    <input type="search"
+                           name="wyszukiwarka"
+                           id="searchText"
+                           placeholder="Wyszukaj..."
+                           required />
+                    <button type="submit" id="searchButton">
+                        <img class="lupka"
+                             src="https://cdn-icons-png.flaticon.com/32/751/751463.png"
+                             alt="lupa" />
+                    </button>
+                </form>
+                <div id="dodajBookDiv">
+                    <button type="button" id="dodajBook" onclick="dodajKsiazke()">Dodaj ksiazke</button>
+                </div>
+            </div>
+            
         </div>
 
         <div id="results"></div>
@@ -77,18 +80,18 @@
 
     <main id="popup">
         <div id="popup-content">
-            
-            <button onclick="ZamknijPopup()" class="popupClose"><img class="popupCloseImg" src="https://cdn-icons-png.flaticon.com/128/5368/5368396.png" alt="zamknij" /></button>
-            <label class="formLabel" for="tytul">Tytuł:</label>
-            <input class="formInput" type="text" id="tytul" name="tytul" required>
-            <label class="formLabel" for="autor">Autor:</label>
-            <input class="formInput" type="text" id="autor" name="autor" required>
-            <label class="formLabel" for="rok">Rok wydania:</label>
-            <input class="formInput" type="number" id="rok" name="rok" required>
-            <label class="formLabel" for="link">Link do zdjecia</label>
-            <input class="formInput" type="text" id="link" name="link" required>
-            <button class="formButt" type="button" id="dodaj-ksiazke" onclick="wyslij(event)">Dodaj książkę</button>
-            
+            <form action="post" id="popup-content">
+                <button onclick="ZamknijPopup()" class="popupClose"><img class="popupCloseImg" src="https://cdn-icons-png.flaticon.com/128/5368/5368396.png" alt="zamknij" /></button>
+                <label class="formLabel" for="tytul">Tytuł:</label>
+                <input class="formInput" type="text" id="tytul" name="tytul" required>
+                <label class="formLabel" for="autor">Autor:</label>
+                <input class="formInput" type="text" id="autor" name="autor" required>
+                <label class="formLabel" for="rok">Rok wydania:</label>
+                <input class="formInput" type="number" id="rok" name="rok" required>
+                <label class="formLabel" for="link">Link do zdjecia</label>
+                <input class="formInput" type="text" id="link" name="link" required>
+                <button class="formButt" type="button" id="dodaj-ksiazke" onclick="wyslij(event)">Dodaj książkę</button>
+            </form>
         </div>
 
     </main>
