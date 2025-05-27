@@ -709,4 +709,18 @@ footer {
         overflow: hidden;
         margin-bottom: 0px;
     }
+
+    .formButt, .formInput, .formLabel {
+        font-size: 1rem;
+    }
+
+    .formInput, .formLabel {
+        width: 90%;
+        height: 2rem;
+    }
+
+        #popup-content {
+            width: 90%;
+            padding: 10px;
+        }
 }
