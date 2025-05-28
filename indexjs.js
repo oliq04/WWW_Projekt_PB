@@ -2,6 +2,7 @@
     const formularzyk = document.getElementById('searchForm');
     const inpucik = document.getElementById('searchText');
     const wyniczek = document.getElementById('results');
+    const favButton = document.getElementById("favButton");
 
     let opóźnienieTime;
     function opóźnienie(fn, opo){
@@ -41,6 +42,13 @@
             }
 
             zmienWidocznoscKsiazek();
+
+            favButton.disabled = dopasowanie.length !== 1;
+
+            if (dopasowanie.length === 1) {
+                favButton.dataset.ksiazka = JSON.stringify(dopasowanie[0]);
+            }
+
         } catch (error) {
             console.error(error);
         }
@@ -65,6 +73,24 @@
         });
     }
 
+    function dodajDoUlubionych(ksiazka){
+    let ulubione = JSON.parse(localStorage.getItem('ulubioneKsiazki')) || [];
+
+    if (!ulubione.some(fav => fav.id === ksiazka.id)) {
+        ulubione.push(ksiazka);
+        localStorage.setItem('ulubioneKsiazki', JSON.stringify(ulubione));
+        alert(`Dodano "${ksiazka.tytul}" do ulubionych!`);
+    } else {
+        alert(`"${ksiazka.tytul}" już jest w ulubionych!`);
+    }
+  }
+    document.getElementById("favButton").addEventListener("click", () => {
+       if(!favButton.dataset.ksiazka) return;
+
+       const ksiazka = JSON.parse(favButton.dataset.ksiazka);
+        dodajDoUlubionych(ksiazka);
+    });
+
     const opóźnieniewyszukiwania = opóźnienie(q => wyszukiwanie(q), 300);
 
     formularzyk.addEventListener('submit', wydarzenie => {
@@ -75,4 +101,16 @@
     formularzyk.addEventListener('input', wydarzenie => {
         opóźnieniewyszukiwania(wydarzenie.target.value);
     });
-});
+
+    function dodajDoUlubionych(ksiazka) {
+    let ulubione = JSON.parse(localStorage.getItem('ulubioneKsiazki')) || [];
+
+    if (!ulubione.some(fav => fav.id === ksiazka.id)) {
+        ulubione.push(ksiazka);
+        localStorage.setItem('ulubioneKsiazki', JSON.stringify(ulubione));
+        alert(`Dodano "${ksiazka.tytul}" do ulubionych!`);
+    } else {
+        alert(`"${ksiazka.tytul}" już jest w ulubionych!`);
+    }
+}
+    });
