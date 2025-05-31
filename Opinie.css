@@ -1,5 +1,6 @@
 ﻿body {
     font-family: "Inter", sans-serif;
+    margin:0px;
 }
 
 
@@ -129,6 +130,16 @@ nav {
     margin:30px
     
    
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    width: 100%;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(lightgray, darkgray);
 }
 
 #share:hover, #inspiration:hover, #disscus:hover

@@ -25,7 +25,7 @@
         }
 
         try {
-            const ksiazki = await fetch('/ksiazka').then(r => r.json());
+            const ksiazki = await fetch('http://localhost:3001/ksiazka').then(r => r.json());
 
             const regex = new RegExp(przeszukaj, 'i');
             const dopasowanie = ksiazki.filter(ksiazka =>

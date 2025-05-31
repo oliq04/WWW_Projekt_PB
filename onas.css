@@ -1,5 +1,8 @@
 ﻿body {
     font-family: "Inter", sans-serif;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -140,8 +143,9 @@ nav {
     font-size: 2rem;
     text-align: left
 }
-section{
-    margin-top:5rem;
+section {
+    margin-top: 5rem;
+    margin:0px 8px;
 }
 
 .darkmode body {
@@ -174,13 +178,15 @@ section{
 
 
 footer {
-    margin-top:10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     padding: 20px 0;
     width: 100%;
     background-color: white;
-    width: auto;
+    width: 100%;
     text-align: center;
-    
+    background-image: linear-gradient(lightgray, darkgray);
 }
 
 #reade 
@@ -203,7 +209,6 @@ footer {
 
     body {
         padding: 10px;
-        margin: 0;
     }
 
     nav {

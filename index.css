@@ -41,115 +41,9 @@
         box-shadow: inset 0 0 0 2px white;
     }
 
-@media screen and (max-width: 780px) {
-    #hed {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    #main-title {
-        display: flex;
-        margin-right: 0;
-        font-size: 1.5rem;
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
-    }
-
-    .navButt {
-        justify-content: center;
-        -webkit-align-items: inherit;
-        align-items: inherit;
-        width: 100%;
-        font-size: 1rem;
-        text-align: center;
-        margin: 0px;
-        padding: 0px;
-        height: 1.2rem;
-    }
 
 
-    #darkmod2 {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
-    .formDiv {
-        width: 90%;
-    }
-
-    .serchbarTytul {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .reklama {
-        height: 15rem;
-        gap: 0px;
-    }
-
-    .ramka-dla-aside {
-        flex: 0 0 10rem;
-        scroll-snap-align: start;
-        background-color: white;
-        height: 100%;
-        padding: 1rem;
-        border-radius: 10px;
-        box-sizing: border-box;
-        width: 5rem;
-        padding: 0.5rem;
-    }
-
-    .obrazek-aside {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 5px;
-    }
-
-    #usereview {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(5rem,1fr));
-        grid-auto-rows: 13rem;
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-    .ramka-dla-obiektu {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-    }
-
-    .tytul-ksiazki {
-        font-size: 0.7rem;
-        width: 100%;
-        overflow: hidden;
-        margin-bottom: 0px;
-    }
-
-    .formButt, .formInput, .formLabel {
-        font-size: 1rem;
-    }
-
-    .formInput, .formLabel {
-        width: 90%;
-        height: 2rem;
-    }
-
-        #popup-content {
-            width: 90%;
-            padding: 10px;
-        }
-}body {
+body {
     font-family: "Inter", sans-serif;
     margin: 0;
     overflow-y: auto;
@@ -453,8 +347,8 @@ aside {
 
 
 @media screen and (max-width: 910px){
-    #dodajBook {
-        font-size: 1rem;
+    #dodajBook, #favButton {
+        font-size: 0.8rem;
     }
 
     .wrapFormDiv {
@@ -845,4 +739,114 @@ footer {
   background: transparent ;
   border: none ;
   box-shadow: none ;
+}
+
+@media screen and (max-width: 780px) {
+    #hed {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #main-title {
+        display: flex;
+        margin-right: 0;
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+
+    .navButt {
+        justify-content: center;
+        -webkit-align-items: inherit;
+        align-items: inherit;
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        height: 1.2rem;
+    }
+
+
+    #darkmod2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .formDiv {
+        width: 90%;
+    }
+
+    .serchbarTytul {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .reklama {
+        height: 15rem;
+        gap: 0px;
+    }
+
+    .ramka-dla-aside {
+        flex: 0 0 10rem;
+        scroll-snap-align: start;
+        background-color: white;
+        height: 100%;
+        padding: 1rem;
+        border-radius: 10px;
+        box-sizing: border-box;
+        width: 5rem;
+        padding: 0.5rem;
+    }
+
+    .obrazek-aside {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    #usereview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(5rem,1fr));
+        grid-auto-rows: 13rem;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .ramka-dla-obiektu {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .tytul-ksiazki {
+        font-size: 0.7rem;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 0px;
+    }
+
+    .formButt, .formInput, .formLabel {
+        font-size: 1rem;
+    }
+
+    .formInput, .formLabel {
+        width: 90%;
+        height: 2rem;
+    }
+
+    #popup-content {
+        width: 90%;
+        padding: 10px;
+    }
 }
