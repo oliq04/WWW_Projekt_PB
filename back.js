@@ -1,4 +1,4 @@
-﻿fetch("http://localhost:3000/ksiazka")
+﻿fetch("http://localhost:3001/ksiazka")
   .then(response => {
     if (!response.ok) throw new Error("Błąd HTTP: " + response.status);
     return response.json();
@@ -51,7 +51,7 @@
     var link = document.getElementById("link").value;
 
 
-    fetch("http://localhost:3000/ksiazka", {
+    fetch("http://localhost:3001/ksiazka", {
       method:"POST",
       headers:{'Content-Type': 'application/json'},
       body:JSON.stringify({
@@ -119,7 +119,7 @@ function asideObrazy(ksiazka) {
 }
 
 window.addEventListener('load', () => {
-    fetch('http://localhost:3000/ksiazka')
+    fetch('http://localhost:3001/ksiazka')
         .then(r => r.json())
         .then(async data => {
 
